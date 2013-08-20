@@ -3,7 +3,11 @@ angular.module('tryout', []).controller('MyController', ['$scope', '$http', '$fi
 	$scope.interroga = function(){
 		$http.get('/comuni?name='+$filter('uppercase')($scope.comuneInserito), function(err){}).success(function(data){
 			console.log(data[0]);
-			L.geoJson(data[0]).addTo(map);
+			L.geoJson(data[0],{
+				  onEachFeature: function (feature, layer) {
+					  layer.bindPopup(feature.properties.name);
+				  }
+			}).addTo(map);
 		});
 	};
 
