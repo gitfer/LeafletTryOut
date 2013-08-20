@@ -9,14 +9,18 @@
 <link rel="stylesheet" type="text/css" href="leaflet-0.6.4/leaflet.css" />
 <!--<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />-->
 </head>
-<body>
+<body ng-app="tryout">
+<div ng-controller="MyController">
+<input type="text" name="campo" value="" ng-model="comuneInserito" />
+<input type="button" class="button" value="Interroga" name="" ng-click="interroga()"/>
 <div id="map" style="height: 400px; width: 600;">
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="leaflet-0.6.4/leaflet.js">
 <!--<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js">-->
 </script>
-<script type="text/javascript" src="leaflettryout.js">
-</script>
+<script type="text/javascript" src="leaflettryout.js"></script>
+<script type="text/javascript" src="controllers/MyController.js"></script>
+</div>
 </body>
 </html>
